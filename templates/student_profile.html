@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+</head>
+<body>
+    <h1>Student Profile</h1>
+
+    <div class="student-info">
+        <h2>{{ student.user.first_name }} {{ student.user.last_name }}</h2>
+        <p>Admission No: {{ student.admission_no }}</p>
+        <p>Course: {{ student.course_name }}</p>
+
+        <!-- Display the student's photo -->
+        {% if student.photo %}
+            <img src="{{ student.photo.url }}" alt="Student Photo" width="200" height="200">
+        {% else %}
+            <p>No photo available</p>
+        {% endif %}
+    </div>
+</body>
+</html>

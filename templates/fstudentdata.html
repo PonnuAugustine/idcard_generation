@@ -1,0 +1,46 @@
+{% extends 'facultybase.html' %}
+
+{% block title %}Faculty Dashboard - Student Data{% endblock %}
+
+{% block content %}
+    <h2>Student Details</h2>
+
+    <label for="batchFilter">Filter by Batch:</label>
+    <select id="batchFilter">
+        <option value="">All</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+    </select>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Admission Number</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.admission_no }}</td>
+                <td>{{ student.user.first_name }} {{ student.user.last_name }}</td>
+                <td>{{ student.department.name }}</td>
+                <td>{{ student.get_approval_status_display }}</td>
+                <td>
+                    {% if student.approval_status == 'Pending' %}
+                        <button class="verify-btn">Verify</button>
+                    {% endif %}
+                    <button class="mark-correction-btn">Mark for Correction</button>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No students found in your department.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

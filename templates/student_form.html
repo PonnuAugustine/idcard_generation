@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student ID Card Details</title>
+    <link rel="stylesheet" href="{% static 'css/student_form.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Student ID Card Details</h1>
+        <!-- Display success message if exists -->
+        {% if messages %}
+            <div class="alert alert-success" style="text-align:center; margin-top: 10px;">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="admission_no">Admission Number:</label>
+                <input type="text" id="admission_no" name="admission_no" value="{{ user.username }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    {% for department in departments %}
+                        <option value="{{ department.id }}">{{ department.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="batch">Batch:</label>
+                <select id="batch" name="batch" required>
+                    {% for batch in batches %}
+                        <option value="{{ batch.id }}">{{ batch.start_year }} - {{ batch.end_year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="house">House:</label>
+                <input type="text" id="house" name="house">
+            </div>
+            <div class="form-group">
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="street">
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+            </div>
+            <div class="form-group">
+                <label for="district">District:</label>
+                <input type="text" id="district" name="district">
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state">
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="number" id="pincode" name="pincode">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="guardian_phone">Guardian Phone Number:</label>
+                <input type="tel" id="guardian_phone" name="guardian_phone">
+            </div>
+            <div class="form-group">
+                <label for="blood_group">Blood Group:</label>
+                <select id="blood_group" name="blood_group" required>
+                    <option value="" disabled selected>Select your blood group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth:</label>
+                <input type="date" id="date_of_birth" name="date_of_birth">
+            </div>
+            <div class="form-group">
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

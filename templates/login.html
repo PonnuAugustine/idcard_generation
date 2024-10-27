@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Automated ID Card Generation System</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="{% url 'login' %}" method="POST">  <!-- Change the action to the appropriate login view -->
+                {% csrf_token %}
+                <h1>Sign in</h1>
+                <input type="text" placeholder="Username" name="username" required />
+                <input type="password" placeholder="Password" name="password" required />
+                <p>Don't have an account? 
+                    <a href="{% url 'register' %}">Register here</a> <!-- Replace 'register' with your actual register URL name -->
+                </p>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

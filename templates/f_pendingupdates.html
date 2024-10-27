@@ -1,0 +1,34 @@
+{% extends 'facultybase.html' %}
+
+{% block title %}Faculty Dashboard - Pending Updates{% endblock %}
+
+{% block content %}
+    <h2>Pending Student Updates</h2>
+    <!-- You can add specific content or table data related to pending student updates here -->
+    <p>These are the students who need to make updates or corrections:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Admission Number</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Correction Requested</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123456</td>
+                <td>John Doe</td>
+                <td>Computer Science</td>
+                <td>Address correction</td>
+            </tr>
+            <tr>
+                <td>789012</td>
+                <td>Jane Smith</td>
+                <td>Electrical Engineering</td>
+                <td>Phone number correction</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

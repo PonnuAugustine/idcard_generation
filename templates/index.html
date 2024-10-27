@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated ID Card Generation System</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Automated ID Card Generation System</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Welcome to the Future of ID Card Generation</h2>
+        <p>Your one-stop solution for automated ID card management.</p>
+        <a href="#features" class="btn">Learn More</a>
+    </section>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We provide a streamlined approach to generate ID cards for students and faculty, ensuring security and ease of use.</p>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <h3>Student Registration</h3>
+                    <p>Easy and fast registration process for students.</p>
+                </div>
+                <div class="card">
+                    <h3>Faculty Verification</h3>
+                    <p>Efficient verification process for faculty members.</p>
+                </div>
+                <div class="card">
+                    <h3>Dynamic ID Card Generation</h3>
+                    <p>Automatically generate ID cards based on submitted data.</p>
+                </div>
+                <div class="card">
+                    <h3>Secure Authentication</h3>
+                    <p>Robust security measures to protect user data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Automated ID Card Generation System. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

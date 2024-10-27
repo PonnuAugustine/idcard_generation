@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background: #f6f5f7;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.container {
+    display: flex; /* Enable flexbox for the container */
+    justify-content: center; /* Center the form */
+    align-items: center; /* Center items vertically */
+    
+}
+
+h1 {
+    font-weight: bold;
+    margin: 0 0 20px; /* Space below the heading */
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+span {
+    font-size: 12px;
+}
+
+p a {
+    color: #FF4B2B; /* Blue color */
+    font-size: 14px; /* Keep the same font size */
+    text-decoration: none; /* Remove underline */
+}
+
+p a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+button {
+    margin-top: 20px; /* Space above the button */
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid #FF4B2B; /* Border color */
+    background-color: #FF4B2B; /* Background color */
+    color: #FFFFFF; /* Text color */
+    font-size: 12px; /* Font size */
+    font-weight: bold; /* Font weight */
+    padding: 12px 45px; /* Padding for button */
+    letter-spacing: 1px; /* Letter spacing */
+    text-transform: uppercase; /* Uppercase text */
+    transition: transform 80ms ease-in; /* Smooth transition */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+button:focus {
+    outline: none; /* Remove outline */
+}
+
+form {
+    background-color: #FFFFFF; /* Form background color */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Stack items vertically */
+    padding: 0 50px; /* Padding around the form */
+    height: 100%; /* Full height */
+    text-align: center; /* Center text within the form */
+}
+
+input {
+    background-color: #eee; /* Light gray background for inputs */
+    border: none; /* No border */
+    padding: 12px 15px; /* Padding for inputs */
+    margin: 8px 0; /* Space between inputs */
+    width: 130%; /* Full width */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 14px; /* Font size for inputs */
+}
+
+.container {
+    background: #fff; /* White background for the form */
+    padding: 40px; /* Padding around the form */
+    border-radius: 10px; /* Rounded corners */
+    /* Orange glowing shadow effect */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22),
+    0 0 15px rgba(255, 165, 0, 0.75); /* Add orange glow */
+    width: 400px; /* Set a fixed width for the form */
+    
+}
+
+.form-container {
+    width: 100%;
+}
+
+.social-container {
+    margin: 20px 0; /* Space above and below social links */
+}

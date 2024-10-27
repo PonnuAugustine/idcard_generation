@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Automated ID Card Generation System</title>
+    <link rel="stylesheet" href="{% static 'css/adminhome.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ID Card Generation System - Admin</div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Side Navigation Panel -->
+        <aside class="side-nav">
+            <ul>
+                <li><a href="{% url 'adminhome' %}">Dashboard</a></li>
+                <li><a href="{% url 'facultyverify' %}">Verify Faculties</a></li>
+                <li><a href="{% url 'generateid' %}">Generate ID Cards</a></li>
+                <li><a href="{% url 'department' %}">Insert Department</a></li>
+                <li><a href="{% url 'batch' %}">Insert Batch</a></li>
+                <li><a href="{% url 'viewstudent' %}">View Student Details</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section id="dashboard">
+                <h2>Admin Dashboard</h2>
+                <p>Welcome to the Admin Dashboard of the ID Card Generation System. Use the side navigation to perform admin tasks.</p>
+                <!-- You can add some dashboard statistics or summaries here -->
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Automated ID Card Generation System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

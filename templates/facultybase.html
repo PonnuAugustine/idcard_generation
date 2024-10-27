@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Faculty Dashboard{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/facultyhome.css' %}">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Faculty Dashboard</h2>
+            <ul>
+                <li><a href="{% url 'facultyhome' %}">Overview</a></li>
+                <li><a href="{% url 'studentdata' %}">Student Data</a></li>
+                <li><a href="{% url 'pendingupdates' %}">Pending Updates</a></li>
+                <li><a href="{% url 'index' %}">Logout</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            {% block content %}
+            <!-- Main content will go here in child templates -->
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

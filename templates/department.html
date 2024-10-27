@@ -1,0 +1,75 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<section id="insert-department">
+    <h2>Insert Department</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" placeholder="Enter department name">
+        </div>
+        <button type="submit">Insert</button>
+    </form>
+</section>
+<section id="existing-departments">
+    <h2>Existing Departments</h2>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Department ID</th>
+                <th>Department Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for department in departments %}
+            <tr>
+                <td>{{ department.id }}</td>
+                <td>{{ department.name }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">No departments available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<style>
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1em;
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+    }
+
+    .styled-table thead tr {
+        background-color: #ff4800;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+    }
+
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+    .styled-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+{% endblock %}
